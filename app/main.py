@@ -1,9 +1,10 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
-from typing import TypeVar, Generic
+from typing import TypeVar, Generic, Union
 
 
-T = TypeVar("T", int, str)
+IntOrStr = Union[int, str]
+T = TypeVar("T", bound=IntOrStr)
 
 
 class Validator(ABC, Generic[T]):
